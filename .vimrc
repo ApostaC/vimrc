@@ -137,7 +137,7 @@ set softtabstop=4
 set shiftwidth=4
 
 set backspace=2
-
+set expandtab
 syntax on
 
 "map keys
@@ -160,17 +160,18 @@ map <C-l> :bn<CR>
 imap kk /*
 imap ;; */
 
-set ts=4
-set expandtab
 
 colors desert
 
 
 " ycm configure
 let g:airline_powerline_fonts = 1
-let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_server_python_interpreter='/usr/bin/python3'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf=0
 let g:syntastic_always_populate_loc_list = 1
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 imap <C-d> <esc>:YcmCompleter GoToDefinitionElseDeclaration<CR>i
+
+" OpenCL
+au BufWinEnter,BufNewFile,BufRead *.cl	setf opencl
